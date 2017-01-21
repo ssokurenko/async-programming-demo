@@ -8,18 +8,21 @@ $(document).ready(function () {
     // DOM Elements
 
     app.dom = {
+        productProgressBar: $('.product-progress'),
         selectedProductID: $('.selected-product-id'),
         selectedProductPrice: $('.selected-product-price'),
         selectedProductType: $('.selected-product-type'),
         searchProductButton: $('button.search-product'),
         searchProductInput: $('#search-product-input'),
         similarProductsList: $('.similar-products-list'),
+        allProductsProgressBar: $('.all-products-progress'),
         allProductsList: $('.all-products-list')
     };
 
     // Events
 
     app.dom.searchProductButton.click(function () {
+        app.dom.productProgressBar.css('visibility', 'visible');
         api.searchProductById(app.dom.searchProductInput.val())
             .then(app.helpers.examineProduct)
             .catch(function (error) {
@@ -35,6 +38,7 @@ $(document).ready(function () {
 
     app.dom.promises.searchAllProducts
         .then(function (products) {
+            app.dom.allProductsProgressBar.hide();
             app.helpers.updateTable(app.dom.allProductsList, products);
         })
         .catch(function (error) {
@@ -47,11 +51,12 @@ $(document).ready(function () {
         updateExamineButtons: function () {
             app.dom.examineProductButtons = $('.examine-product-button');
             app.dom.examineProductButtons.click(function () {
-                api.searchProductById($(this).data('id'))
-                    .then(app.helpers.examineProduct);
+                app.dom.productProgressBar.css('visibility', 'visible');
+                api.searchProductById($(this).data('id')).then(app.helpers.examineProduct);
             });
         },
         examineProduct: function (product) {
+            app.dom.productProgressBar.css('visibility', 'hidden');
             app.dom.selectedProductID.html(product.id);
             app.dom.selectedProductPrice.html(product.price);
             app.dom.selectedProductType.html(product.type);
