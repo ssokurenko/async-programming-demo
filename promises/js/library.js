@@ -6,7 +6,7 @@
 
     function API() {
         function createRandomProduct() {
-            const typeArray = ['Book', 'Parts', 'Clothing', 'Food'],
+            const typeArray = ['Electronics', 'Book', 'Clothing', 'Food'],
                 price = (Math.random() * 500).toFixed(2),
                 type = typeArray[Math.floor(Math.random() * 4)];
             return {
@@ -45,7 +45,7 @@
             var promise = new Promise(function (resolve, reject) {
                 var i = 0,
                     foundProducts = [],
-                    possibleTypes = ['Book', 'Parts', 'Clothing', 'Food'];
+                    possibleTypes = ['Electronics', 'Book', 'Clothing', 'Food'];
 
                 if (!possibleTypes.includes(type)) {
                     reject('Error: ' + type + ' is not supported');

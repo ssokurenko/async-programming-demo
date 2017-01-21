@@ -15,14 +15,40 @@
             <h1>Products Selection DEMO</h1>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h3>Search product by ID:</h3>
+                        <h4>Search Product by Id:</h4>
                         <div class="input-group">
                             <input id="search-product-input" class="form-control" placeholder="Type ID there">
                             <span class="input-group-btn">
-                            <button class="search-product btn btn-default">Search Product</button>
+                            <button class="search-product btn btn-default" data-action="searchProductById">Search</button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Search Products by Type:</h4>
+                        <div class="input-group">
+                            <input id="search-type-input" class="form-control" placeholder="Type ID there">
+                            <span class="input-group-btn">
+                            <button class="search-product btn btn-default" data-action="searchProductsByType">Search</button>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Search Products by Price</h4>
+                        <div class="input-group">
+                            <input id="search-price-input" class="form-control" placeholder="Type ID there">
+                            <span class="input-group-btn">
+                            <button class="search-product btn btn-default" data-action="searchProductsByPrice">Search</button>
                         </span>
                         </div>
                     </div>
