@@ -30,3 +30,11 @@ Just copy/paste a URL of an image which contains a face and press the Analyse bu
 [Demo link](https://ssokurenko.github.io/async-programming-demo/face-age/).
 
 [![Demo](http://i3.ytimg.com/vi/jvvEjxTeoFY/hqdefault.jpg)](https://www.youtube.com/watch?v=jvvEjxTeoFY)
+
+
+### Generators and fetch API
+
+A mini app which fetches data and compares the values
+[Demo link](https://ssokurenko.github.io/async-programming-demo/starships/).
+
+
