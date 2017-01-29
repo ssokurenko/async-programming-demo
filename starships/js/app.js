@@ -33,7 +33,7 @@ app.actions = {
 function* gen() {
     var leftItem = $('#spaceships-left-input').val(),
         rightItem = $('#spaceships-right-input').val(),
-        API = 'http://swapi.co/api/starships/';
+        API = 'https://swapi.co/api/starships/';
 
     if (starships[leftItem] === undefined || starships[rightItem] === undefined) {
         alert('The starships do not exist. Please correct input data.')
